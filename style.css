@@ -1,0 +1,23 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    display: flex; /* or inline-flex */
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.box {
+    width: 50px;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.box1 {
+    background-color: crimson;
+}
