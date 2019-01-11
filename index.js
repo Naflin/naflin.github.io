@@ -52,4 +52,11 @@ window.onload = function() {
         triangles[i].addEventListener('click', spin, false);
         console.log("Triangle marked");
     }
+
+    var card = document.querySelector('.card');
+    $('.flip').click(function () {
+        card.classList.toggle('is-flipped');
+        console.log("flippeding")
+    });    
+    
 };

@@ -3,6 +3,8 @@
     margin: 0;
 }
 
+body { font-family: sans-serif; }
+
 /*
 
 skin tone: #edc7b7
@@ -22,7 +24,7 @@ ol li {
     flex-direction: column;
     height: 100vh;
     overflow: hidden;
-    background-color: #edc7b7;
+    background-color: #E7EFFF;
 }
 
 .row {
@@ -84,8 +86,9 @@ ol li {
     align-items: center;
     align-self: center;
     justify-content: center;
-    height: 100%;
+    height: 75%;
     width: 75vw;
+    perspective: 600px;
     /* background-color: #edc7bb; */
 }
 
@@ -142,6 +145,45 @@ ol li {
 @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
 @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+.scene {
+    perspective: 600px;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 1s;
+    transform-origin: center right;
+    transform-style: preserve-3d;
+}
+
+.card__face {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+}
+
+.card__face--front {
+    background: #edc7b7;
+}
+
+.card__face--back {
+    background: #030618;
+    transform: rotateY(180deg);
+}
+
+.card.is-flipped {
+    transform: translateX(-100%) rotateY(-180deg);
+}
+
+.flip {
+    width: 150px;
+    padding: 5px;
+    margin: 10px;
+}
 
 /* OTHER STUFF */
 
