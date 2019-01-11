@@ -28,4 +28,20 @@ window.onload = function() {
     }
     
     update();
+
+    var triangles = document.getElementsByClassName("tri");
+
+    var spin = function(event) {
+        var targetElement = event.target || event.srcElement;
+        var parent = targetElement.parentNode;
+        var triangleDisappear = "tri-disappear";
+        if(!parent.className.includes(triangleDisappear)) {
+            parent.className += " " + triangleDisappear;
+        }
+    }
+
+    for (let i = 0; i < triangles.length; i++) {
+        triangles[i].addEventListener('click', spin, false);
+        console.log("Triangle marked");
+    }
 };
