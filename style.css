@@ -133,9 +133,7 @@ ol li {
     transform: rotate(-45deg);
 }
 
-.tri-disappear {
-    transform: rotateX(95deg) rotateY(45deg) rotateZ(45deg);
-    /* background-color: darkorange; */
+.tri-spin {
     -webkit-animation:spin 4s linear infinite;
     -moz-animation:spin 4s linear infinite;
     animation:spin 4s linear infinite;

@@ -34,9 +34,17 @@ window.onload = function() {
     var spin = function(event) {
         var targetElement = event.target || event.srcElement;
         var parent = targetElement.parentNode;
-        var triangleDisappear = "tri-disappear";
-        if(!parent.className.includes(triangleDisappear)) {
-            parent.className += " " + triangleDisappear;
+        var triangleSpin = "tri-spin";
+        if(!parent.className.includes(triangleSpin)) {
+            parent.className += " " + triangleSpin;
+            parent.style.webkitAnimationPlayState = 'running';
+        } else {
+            if (parent.style.webkitAnimationPlayState === 'running') {
+                parent.style.webkitAnimationPlayState = 'paused';
+            } else {
+                parent.style.webkitAnimationPlayState = 'running';
+                document.body.className = '';
+            }
         }
     }
 
