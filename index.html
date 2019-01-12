@@ -7,24 +7,67 @@
     <link rel="stylesheet" href="style.css">
     <title>Naflin</title>
 </head>
-<body>
-        <div class="container scene">
+<body>        
+        <div class="container">
             <nav class="nav">
                 <li class="nav-title"><a href="#" class="flip"><h3>Naflin | Welcome to my world</h1></a></li>
-                <button class="flip">Flip</button>
+                <li>
+                    <p class="radio-group">
+                        <label>
+                            <input type="radio" name="rotate-cube-side" class="form-radio" value="front" checked /> front
+                        </label>
+                        <label>
+                            <input type="radio" name="rotate-cube-side" class="form-radio" value="right" /> right
+                        </label>
+                        <label>
+                            <input type="radio" name="rotate-cube-side" class="form-radio" value="back" /> back
+                        </label>
+                        <label>
+                            <input type="radio" name="rotate-cube-side" class="form-radio" value="left" /> left
+                        </label>
+                        <label>
+                            <input type="radio" name="rotate-cube-side" class="form-radio" value="top" /> top
+                        </label>
+                        <label>
+                            <input type="radio" name="rotate-cube-side" class="form-radio" value="bottom" /> bottom
+                        </label>
+                    </p>
+                </li>
+                <li>
+                    <button class="flip">Flip</button>
+                </li>
+                <li>
+                    <button class="display nav-hide">Hide</button>
+                </li>
             </nav>
-            <div class="card">
-                <div class="card-face card-face-front">
-                    <div class="circle">
-                        <div class="tri tri1"></div>
-                        <div class="tri tri2"></div>
-                        <div class="tri tri3"></div>
-                        <div class="tri tri4"></div>
+            <button class="display nav-show" style="display:none;">Show</button>
+            <div class="cube-wrapper">
+                <div class="scene-cube">
+                    <div class="cube">
+                        <div class="cube-face cube-face-front">
+                            Welcome!
+                        </div>
+                        <div class="cube-face cube-face-back">back</div>
+                        <div class="cube-face cube-face-right">right</div>
+                        <div class="cube-face cube-face-left">left</div>
+                        <div class="cube-face cube-face-top">top</div>
+                        <div class="cube-face cube-face-bottom">bottom</div>
                     </div>
                 </div>
-                <div class="card-face card-face-back">
-                    Oh hi...
+            </div>
+            <!-- <div class="card">
+                <div class="card-face card-face-front">
+                    Umm
                 </div>
+                <div class="card-face card-face-back">
+                    Oh
+                </div>
+            </div> -->
+            <div class="circle">
+                <div class="tri tri1"></div>
+                <div class="tri tri2"></div>
+                <div class="tri tri3"></div>
+                <div class="tri tri4"></div>
             </div>
         </div>
     

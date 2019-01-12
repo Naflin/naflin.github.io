@@ -20,10 +20,14 @@ red: #ac3b61
 .nav {
     display: -webkit-flex;
     display: flex;
+    flex-wrap: wrap;
     list-style-type: none;
     margin-bottom: auto;
     align-items: flex-end;
     background-color: #E7EFFF;
+    position: absolute;
+    z-index: 1;
+    width: 100vw;
 }
 
 .nav li:first-child {
@@ -45,13 +49,32 @@ ol li {
     list-style-type: none;
 }
 
+.display {
+    width: 75px;
+    margin: 10px;
+    padding: 5px;
+}
+
+.nav-show {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.flip {
+    width: 150px;
+    padding: 5px;
+    margin: 10px;
+}
+
 .container {
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
     height: 100vh;
     overflow: hidden;
-    background-image: url("/static/images/milkyway.jpg");
-    background-size: 100%;
+    /* background-image: url("/static/images/milkyway.jpg"); */
+    background: #E7EFFF;
 }
 
 .row {
@@ -87,7 +110,7 @@ ol li {
 }
 
 .sub-top-list li {
-    margin-top: 10px;
+    
 }
 
 .title {
@@ -120,15 +143,18 @@ ol li {
 }
 
 .circle {
-    position: relative;
-    width: 300px;
-    height: 300px;
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
 }
 
 .tri {
     position: absolute;
-    width: 150px;
-    height: 150px;
+    width: 30px;
+    height: 30px;
     border-top-left-radius: 100%;
     cursor: pointer;
 }
@@ -208,13 +234,123 @@ ol li {
     transform: translateX(-100%) rotateY(-180deg);
 }
 
-.flip {
-    width: 150px;
-    padding: 5px;
-    margin: 10px;
+.cube-wrapper {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
 }
 
-/* OTHER STUFF */
+.scene-cube {
+    width: 100%;
+    height: 100%;
+    perspective: -300px;
+}
+
+.cube {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.cube-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* border: 2px solid red; */
+    line-height: 200px;
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+.cube-face-front  { background: hsla(  0, 100%, 50%, 1); }
+.cube-face-right  { background: hsla( 60, 100%, 50%, 1); }
+.cube-face-back   { background: hsla(120, 100%, 50%, 1); }
+.cube-face-left   { background: hsla(180, 100%, 50%, 1); }
+.cube-face-top    { background: hsla(240, 100%, 50%, 1); }
+.cube-face-bottom { background: hsla(300, 100%, 50%, 1); }
+
+.cube-face-front  { transform: rotateY(  0deg); }
+.cube-face-right  { transform: rotateY( 90deg); }
+.cube-face-back   { transform: rotateY(180deg); }
+.cube-face-left   { transform: rotateY(-90deg); }
+.cube-face-top    { transform: rotateX( 90deg); }
+.cube-face-bottom { transform: rotateX(-90deg); }
+
+.cube-face-front  { transform: rotateY(  0deg) translateZ(500px); }
+.cube-face-right  { transform: rotateY( 90deg) translateZ(500px); }
+.cube-face-back   { transform: rotateY(180deg) translateZ(500px); }
+.cube-face-left   { transform: rotateY(-90deg) translateZ(500px); }
+.cube-face-top    { transform: rotateX( 90deg) translateZ(500px); }
+.cube-face-bottom { transform: rotateX(-90deg) translateZ(500px); }
+.cube { transform: translateZ(-100px); }
+
+.cube.show-front  { transform: translateZ(-100px) rotateY(   0deg); }
+.cube.show-right  { transform: translateZ(-100px) rotateY( -90deg); }
+.cube.show-back   { transform: translateZ(-100px) rotateY(-180deg); }
+.cube.show-left   { transform: translateZ(-100px) rotateY(  90deg); }
+.cube.show-top    { transform: translateZ(-100px) rotateX( -90deg); }
+.cube.show-bottom { transform: translateZ(-100px) rotateX(  90deg); }
+
+
+.cube { transition: transform 1s; }
+
+.radio-group {
+    margin: 15px;
+}
+
+.form-radio
+{
+     -webkit-appearance: none;
+     -moz-appearance: none;
+     appearance: none;
+     display: inline-block;
+     position: relative;
+     background-color: #f1f1f1;
+     color: rgb(0, 0, 0);
+     top: 10px;
+     height: 30px;
+     width: 30px;
+     border: 0;
+     border-radius: 50px;
+     cursor: pointer;     
+     margin-right: 7px;
+     outline: none;
+}
+.form-radio:checked::before
+{
+     position: absolute;
+     font: 13px/1 'Open Sans', sans-serif;
+     left: 11px;
+     top: 7px;
+     content: '\02143';
+     transform: rotate(40deg);
+}
+.form-radio:hover
+{
+     background-color: #f7f7f7;
+}
+.form-radio:checked
+{
+     background-color: #0f7525;
+}
+
+label
+{
+    font: 300 16px/1.7 'Open Sans', sans-serif;
+    color: #666;
+    cursor: pointer;
+} 
+
+/* Mountain and Triangle CSS */
 
 .g-container {
     display: flex; /* or inline-flex */

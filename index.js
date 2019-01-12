@@ -55,8 +55,39 @@ window.onload = function() {
 
     var card = document.querySelector('.card');
     $('.flip').click(function () {
-        card.classList.toggle('is-flipped');
-        console.log("flippeding")
-    });    
+        if(card) {
+            card.classList.toggle('is-flipped');
+            console.log("flippeding")
+        }
+    });
+
+
+    var cube = document.querySelector('.cube');
+    var radioGroup = document.querySelector('.radio-group');
+    var currentClass = '';
+
+    function changeSide() {
+        var checkedRadio = radioGroup.querySelector(':checked');
+        var showClass = 'show-' + checkedRadio.value;
+        if ( currentClass ) {
+            cube.classList.remove( currentClass );
+        }
+        cube.classList.add( showClass );
+        currentClass = showClass;
+    }
+    // set initial side
+    changeSide();
+
+    radioGroup.addEventListener( 'change', changeSide );
+
+    $('.display').click(function() {
+        $('.nav').toggle();
+        $('.display').toggle();
+    });
+
+    // $('.nav-show').click(function() {
+    //     $('.nav').show();
+    //     $(this).hide();
+    // });
     
 };
