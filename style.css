@@ -120,6 +120,10 @@ ol li {
     /* background-image: linear-gradient(to right bottom, #051937, #0a2246, #102b55, #163566, #1c3f76); */
 }
 
+.message {
+    margin-top: 200px;
+}
+
 .main-column {
     display: flex;
     flex-direction: column;

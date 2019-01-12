@@ -57,6 +57,7 @@ window.onload = function() {
     $('.flip').click(function () {
         if(card) {
             card.classList.toggle('is-flipped');
+            $('.radio-group').toggle();
             console.log("flippeding")
         }
     });
