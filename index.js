@@ -86,6 +86,10 @@ window.onload = function() {
         $('.display').toggle();
     });
 
+    $('#rvb-form').submit(function(event) {
+        event.preventDefault();
+    })
+
     // $('.nav-show').click(function() {
     //     $('.nav').show();
     //     $(this).hide();
