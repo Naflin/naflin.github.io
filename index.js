@@ -30,7 +30,7 @@ window.onload = function() {
     update();
 
     var triangles = document.getElementsByClassName("tri");
-
+    
     var spin = function(event) {
         var targetElement = event.target || event.srcElement;
         var parent = targetElement.parentNode;
@@ -58,7 +58,7 @@ window.onload = function() {
         if(card) {
             card.classList.toggle('is-flipped');
             $('.radio-group').toggle();
-            console.log("flippeding")
+            console.log("flipping")
         }
     });
 
