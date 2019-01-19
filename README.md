@@ -1,6 +1,6 @@
 # naflin.github.io
 
-- Featuring rotating color wheel
-- Card flipping
-- Cube rotation
-- Cube controls
+### Projects
+
+- https://naflin.github.io/cube/
+    - Cube animations and navigation
