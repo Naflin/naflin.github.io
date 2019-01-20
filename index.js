@@ -9,7 +9,7 @@ window.onload = function() {
     text.delay = 500;
 
     anime.timeline({
-        loop: true
+        loop: false
     }).add({
         targets: '.animated-text .letters-1',
         opacity: text.opacityIn,
